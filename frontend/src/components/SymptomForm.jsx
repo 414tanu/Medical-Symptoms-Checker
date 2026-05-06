@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useLang } from '../App';
+import { symptomsAPI } from '../services/api';
 
 const SymptomForm = () => {
   const [symptoms, setSymptoms] = useState('');
@@ -86,13 +87,8 @@ const SymptomForm = () => {
         location: location || 'Bihar/UP rural',
         user_id: user?.id || null,
       };
-      const response = await fetch('http://127.0.0.1:8000/api/symptoms/analyze/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      if (!response.ok) throw new Error(lang === 'hi' ? 'जांच विफल रही। दोबारा कोशिश करें।' : 'Analysis failed. Please try again.');
-      const analysis = await response.json();
+      const response = await symptomsAPI.analyze(payload);
+      const analysis = response.data;
       localStorage.setItem('analysisResults', JSON.stringify(analysis));
       localStorage.setItem('userLocation', payload.location);
       navigate('/analysis');

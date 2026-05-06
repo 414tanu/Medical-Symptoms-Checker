@@ -14,13 +14,26 @@ const Login = () => {
     setLoading(true);
     setError('');
 
-    const phone = formData.phone.startsWith('+91') ? formData.phone : `+91${formData.phone}`;
+    const digits = formData.phone.replace(/\D/g, '').slice(-10);
+    const phone = `+91${digits}`;
+
+    if (digits.length !== 10) {
+      setLoading(false);
+      setError('Enter a valid 10 digit phone number.');
+      return;
+    }
 
     try {
       await login({ phone, password: formData.password });
       navigate('/dashboard');
     } catch (err) {
-      setError('Invalid phone number or password. Create an account first if you are new.');
+      if (!err.response) {
+        setError('Cannot reach the backend server. Check REACT_APP_API_BASE in Vercel and make sure the backend is deployed.');
+      } else if (err.response.status === 401) {
+        setError('Invalid phone number or password.');
+      } else {
+        setError(err.response.data?.error || 'Login failed. Please try again.');
+      }
     } finally {
       setLoading(false);
     }
