@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="hi-IN">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <!-- PWA Theme Color (teal) -->
+    <meta name="theme-color" content="#0d9488" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- SEO -->
+    <meta name="description"
+      content="HealthCheck AI — AI-powered medical symptom checker for rural India. Describe symptoms in Hindi or English, find nearby PHCs and hospitals, book appointments, set medicine reminders." />
+    <meta name="keywords"
+      content="rural health India, Hindi symptom checker, AI doctor, Bihar UP hospital, PHC near me, online doctor appointment, medicine reminder, swasthya" />
+    <meta name="author" content="HealthCheck AI" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="HealthCheck AI — Rural India Medical Assistant" />
+    <meta property="og:description" content="AI symptom checker in Hindi & English. Find nearby clinics, book appointments, set medicine reminders — made for rural India." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="%PUBLIC_URL%/logo512.png" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+    <title>HealthCheck AI — Rural India Health Assistant</title>
+
+    <!-- Register Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function (reg) {
+              console.log('SW registered:', reg.scope);
+            })
+            .catch(function (err) {
+              console.log('SW registration failed:', err);
+            });
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>
+      JavaScript ज़रूरी है। Please enable JavaScript to run HealthCheck AI.
+    </noscript>
+    <div id="root"></div>
+  </body>
+</html>

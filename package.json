@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@react-google-maps/api": "^2.20.8",
+    "axios": "^1.16.0",
+    "i18next": "^26.0.8",
+    "react-i18next": "^17.0.6",
+    "react-router-dom": "^7.14.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.14",
+    "tailwindcss": "^4.2.4"
+  }
+}

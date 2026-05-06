@@ -1,0 +1,54 @@
+{
+  "short_name": "HealthCheck AI",
+  "name": "HealthCheck AI — Rural India Medical Assistant",
+  "description": "AI-powered symptom checker and clinic finder for rural India",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0d9488",
+  "background_color": "#f0fdfa",
+  "scope": "/",
+  "lang": "hi-IN",
+  "categories": ["health", "medical", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "Check Symptoms",
+      "short_name": "Symptoms",
+      "description": "AI symptom analysis",
+      "url": "/symptoms",
+      "icons": [{ "src": "favicon.ico", "sizes": "96x96" }]
+    },
+    {
+      "name": "Find Clinic",
+      "short_name": "Clinic",
+      "description": "Find nearby clinics",
+      "url": "/hospitals",
+      "icons": [{ "src": "favicon.ico", "sizes": "96x96" }]
+    },
+    {
+      "name": "Emergency",
+      "short_name": "SOS",
+      "description": "Emergency numbers",
+      "url": "/",
+      "icons": [{ "src": "favicon.ico", "sizes": "96x96" }]
+    }
+  ]
+}
