@@ -74,13 +74,24 @@ REST_FRAMEWORK = {
     ],
 }
 
+DEFAULT_CORS_ALLOWED_ORIGINS = ','.join([
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'https://medical-symptoms-checker-pqp3.vercel.app',
+    'https://medical-symptoms-checker.vercel.app',
+])
+
 CORS_ALLOWED_ORIGINS = [
     origin.strip()
     for origin in os.getenv(
         'CORS_ALLOWED_ORIGINS',
-        'http://localhost:3000,http://127.0.0.1:3000'
+        DEFAULT_CORS_ALLOWED_ORIGINS
     ).split(',')
     if origin.strip()
+]
+
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r'^https://medical-symptoms-checker.*\.vercel\.app$',
 ]
 
 CORS_ALLOW_CREDENTIALS = True

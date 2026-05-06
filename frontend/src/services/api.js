@@ -1,6 +1,10 @@
 import axios from 'axios';
 
-const API_BASE = process.env.REACT_APP_API_BASE || 'http://127.0.0.1:8000/api';
+const LOCAL_API_BASE = 'http://127.0.0.1:8000/api';
+const PRODUCTION_API_BASE = 'https://medical-symptoms-checker-backend.vercel.app/api';
+const API_BASE =
+  process.env.REACT_APP_API_BASE ||
+  (process.env.NODE_ENV === 'production' ? PRODUCTION_API_BASE : LOCAL_API_BASE);
 
 const api = axios.create({
   baseURL: API_BASE,
@@ -24,7 +28,7 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (!error.response) {
-      error.message = 'Cannot reach the backend server. Make sure Django is running on http://127.0.0.1:8000.';
+      error.message = `Cannot reach the backend server at ${API_BASE}.`;
     }
     if (error.response?.status === 401) {
       localStorage.removeItem('token');
