@@ -1,10 +1,7 @@
 import axios from 'axios';
 
 const LOCAL_API_BASE = 'http://127.0.0.1:8000/api';
-const PRODUCTION_API_BASE = 'https://medical-symptoms-checker-backend.vercel.app/api';
-const API_BASE =
-  process.env.REACT_APP_API_BASE ||
-  (process.env.NODE_ENV === 'production' ? PRODUCTION_API_BASE : LOCAL_API_BASE);
+const API_BASE = process.env.REACT_APP_API_BASE || LOCAL_API_BASE;
 
 const api = axios.create({
   baseURL: API_BASE,
