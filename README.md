@@ -86,3 +86,10 @@ The repository is structured into two main parts:
 - [ ] Configure PWA service workers for offline support.
 - [ ] Seed rural clinics database for Bihar/UP.
 - [ ] Production deployment to GCP/Docker.
+
+## 👨‍💻 Developed By
+**Tanuj**
+- GitHub: [414tanu](https://github.com/414tanu)
+- Email: tanujbrt@gmail.com
+
+*Built with ❤️ to fight hunger and reduce global food waste.*
