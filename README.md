@@ -88,7 +88,7 @@ The repository is structured into two main parts:
 - [ ] Production deployment to GCP/Docker.
 
 ## 👨‍💻 Developed By
-**Tanuj**
+**Tanu**
 - GitHub: [414tanu](https://github.com/414tanu)
 - Email: tanujbrt@gmail.com
 
