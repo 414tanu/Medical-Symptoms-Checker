@@ -92,4 +92,4 @@ The repository is structured into two main parts:
 - GitHub: [414tanu](https://github.com/414tanu)
 - Email: tanujbrt@gmail.com
 
-*Built with ❤️ to fight hunger and reduce global food waste.*
+*Built with ❤️ to improve healthcare access and empower rural communities.*
